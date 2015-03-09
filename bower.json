@@ -2,11 +2,12 @@
   "name": "plupload-angular-directive",
   "homepage": "https://github.com/sahusoftcom/plupload-angular-directive",
   "authors": [
+    "Robin van Baalen <robin@neverwoods.com>",
     "Sanket <sanketsahu@gmail.com>",
     "Saurabh <saurabhsahu13@gmail.com>"
   ],
   "description": "An angular JS wrapper for plUpload with the latest plupload build files included",
-  "main": "src/js/plupload-angular-directive.js",
+  "main": "dist/plupload-angular-directive.min.js",
   "moduleType": [
     "globals"
   ],
