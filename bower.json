@@ -6,7 +6,7 @@
     "Saurabh <saurabhsahu13@gmail.com>"
   ],
   "description": "An angular JS wrapper for plUpload with the latest plupload build files included",
-  "main": "dist/plupload-angular-directive.min.js",
+  "main": "src/js/plupload-angular-directive.js",
   "moduleType": [
     "globals"
   ],
