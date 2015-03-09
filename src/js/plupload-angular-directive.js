@@ -106,10 +106,8 @@ angular.module('plupload.directive', [])
 				uploader.bind('Error', function(up, err) {
 					var fn = $parse(iAttrs.onFileError);
 					scope.$apply(function(){
-						fn(scope.$parent, {$response:res});
-					});$
-					
-					$log.error("Cannot upload, error: " + err.message + (err.file ? ", File: " + err.file.name : "") + "");
+						fn(scope.$parent, {$error:err});
+					});
 
 					up.refresh(); // Reposition Flash/Silverlight
  				});
