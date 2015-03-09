@@ -22,16 +22,15 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'src/**/*.js', 'src/**/**/*.js'],
-      options: {
-        // options here to override JSHint defaults
-        globals: {
-          jQuery: true,
-          console: true,
-          module: true,
-          document: true
-        }
-      }
+        options: {
+            globals: {
+                jQuery: true,
+                console: true,
+                module: true,
+                document: true
+            }
+        },
+        files: ['src/js/plupload-angular-directive.js']
     },
     copy: {
       main: {
@@ -50,6 +49,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['jshint']);
 
-  grunt.registerTask('build', ['jshint', 'concat', 'uglify','copy']);
+  grunt.registerTask('build', ['jshint', 'concat', 'uglify', 'copy']);
 
 };
