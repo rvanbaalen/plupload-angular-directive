@@ -104,9 +104,10 @@ angular.module('plupload.directive', [])
 				uploader.init();
 
 				uploader.bind('Error', function(up, err) {
-					if(iAttrs.onFileError){
-						scope.$parent.$apply(iAttrs.onFileError);
-					} 
+					var fn = $parse(iAttrs.onFileError);
+					scope.$apply(function(){
+						fn(scope.$parent, {$response:res});
+					});$
 					
 					$log.error("Cannot upload, error: " + err.message + (err.file ? ", File: " + err.file.name : "") + "");
 
