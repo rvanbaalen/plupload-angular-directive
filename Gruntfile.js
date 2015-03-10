@@ -2,12 +2,21 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        folders: {
+            bower: './bower_components',
+            source: './src/js',
+            plupload: '<%= folders.bower %>/plupload/js'
+        },
+
         concat: {
             options: {
                 separator: ';'
             },
             dist: {
-                src: ['src/**/*.js','src/**/**/*.js'],
+                src: [
+                    '<%= folders.source %>/plupload-angular-directive.js',
+                    '<%= folders.plupload %>/plupload.full.js'
+                ],
                 dest: 'dist/<%= pkg.name %>.js'
             }
         },
@@ -38,8 +47,10 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: false, src: ['src/lib/plupload/plupload.flash.swf'], dest: 'dist/plupload.flash.swf'},
-                    {expand: false, src: ['src/lib/plupload/plupload.silverlight.xap'], dest: 'dist/plupload.silverlight.xap'},
+                    {expand: false, src: ['<%= folders.plupload %>/plupload.flash.swf'], dest: 'dist/plupload.flash.swf'},
+                    {expand: false, src: ['<%= folders.plupload %>/plupload.silverlight.xap'], dest: 'dist/plupload.silverlight.xap'},
+                    {expand: false, src: ['<%= folders.plupload %>/plupload.flash.cors.swf'], dest: 'dist/plupload.flash.cors.swf'},
+                    {expand: false, src: ['<%= folders.plupload %>/plupload.silverlight.cors.xap'], dest: 'dist/plupload.silverlight.cors.xap'}
                 ]
             }
         }
